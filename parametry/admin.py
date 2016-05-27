@@ -1,3 +1,4 @@
 from django.contrib import admin
+from parametry.models import Groupofstudents
 
-# Register your models here.
+admin.site.register(Groupofstudents)
