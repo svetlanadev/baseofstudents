@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello world</title>
+	<title>Base</title>
 </head>
 <body>
-	<h1>Test</h1>
-	hello again <br/><strong>{{boldmessage}}</strong>
+	<h1>Base of students English course</h1>
+	{% for x in sequence %}
+		<div>
+			<a href="studentsprofile/{{x.id}}">Go...{{x.lastname}}</a>
+		</div>
+	{% endfor %}
 </body>
 </html>

@@ -1,9 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from students.models import Studentsprofile
 
 def index(request):
-	context_dict = {'boldmessage':'Bold text'}
-	return render(request, 'index.html', context_dict)
-
-def about(request):
-	return HttpResponse("It's about page")
+	studvariable = Studentsprofile.objects.all()
+	return render(request, 'index.html', {'sequence': studvariable})
