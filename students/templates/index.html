@@ -3,12 +3,10 @@
 <head>
 	<title>Base</title>
 </head>
-<body>
-	<h1>Base of students English course</h1>
+<body>`
 	{% for x in sequence %}
-		<div>
-			<a href="studentsprofile/{{x.id}}">Go...{{x.lastname}}</a>
-		</div>
+		{{x.firstname}}|{{x.lastname}}
+		<hr/>
 	{% endfor %}
 </body>
 </html>
