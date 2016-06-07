@@ -2,9 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from students.models import Studentsprofile
 
-def index(request):
-	return render(request, 'base.html')
+def base(request):
+	students = Studentsprofile.objects.all()
+	return render(request, 'base.html', {'studentsall': students})
+
 
 def students(request):
-	studvariable = Studentsprofile.objects.all()
-	return render(request, 'index.html', {'sequence': studvariable})
+	students = Studentsprofile.objects.all()
+	return render(request, 'index.html', {'studentsall': students})
+	
