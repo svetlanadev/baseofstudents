@@ -1,0 +1,15 @@
+{% load staticfiles %} 
+
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+	<title>Base_of_Students</title>
+</head>
+<body>
+<p> Grops of students	</p>
+{% for group in groupsall %}
+	{{group.name}}
+	<hr/>
+{% endfor %}
+</body>
+</html>
