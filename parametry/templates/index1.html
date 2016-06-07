@@ -1,3 +1,4 @@
+{% extends "base.html" %}
 {% load staticfiles %} 
 
 <!DOCTYPE <!DOCTYPE html>
@@ -6,10 +7,14 @@
 	<title>Base_of_Students</title>
 </head>
 <body>
-<p> Grops of students	</p>
-{% for group in groupsall %}
-	{{group.name}}
+{% block content %}
+<hr/><hr/>
+	<p> Grops of students:	</p>
 	<hr/>
-{% endfor %}
+	{% for group in groupsall %}
+		{{group.name}}
+		<hr/>
+	{% endfor %}
+{% endblock %}
 </body>
 </html>

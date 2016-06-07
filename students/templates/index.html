@@ -1,16 +1,21 @@
+{% extends "base.html" %}
 {% load staticfiles %} 
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Base</title>
+	<title>Base_of_Students</title>
 </head>
 <body>`
-<p>Test Drive Development</p>
+{% block content %}
+<hr/><hr/>
+<p>All students:</p>
+	<hr/>
     {% for stud in studentsall %}
     {{stud.dait_of_birth}}|{{stud.firstname}}|{{stud.lastname}}|{{stud.students_ticket}}
     <hr/>
     {% endfor %}
+{% endblock %}
 </body>
 </body>
 </html>

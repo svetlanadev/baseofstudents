@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 </head>
+{% block menu %}
 <body>
 <div class="container">
 	<div class="row block-dark">I love fruits</div>
@@ -22,6 +23,18 @@
       <a class="nav-link" href="parametry">Groups</a>
     </li>
    </ul>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+<hr/>
+<hr/>
+{% block footer %}
+  {% block copyright %}
+    <p>Footer</p>
+    <p>@2016 Service Accounting Students</p>
+  {% endblock %}
+{% endblock %}
 
 </body>
 </html>
