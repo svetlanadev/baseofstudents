@@ -3,8 +3,7 @@ from django.http import HttpResponse
 from students.models import Studentsprofile
 
 def base(request):
-	students = Studentsprofile.objects.all()
-	return render(request, 'base.html', {'studentsall': students})
+	return render(request, 'base.html')
 
 
 def students(request):

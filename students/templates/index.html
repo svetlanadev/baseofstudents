@@ -1,4 +1,4 @@
-
+{% load staticfiles %} 
 
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,7 @@
 <body>`
 <p>Test Drive Development</p>
     {% for stud in studentsall %}
-    {{stud.firstname}}|{{stud.lastname}}
+    {{stud.dait_of_birth}}|{{stud.firstname}}|{{stud.lastname}}|{{stud.students_ticket}}
     <hr/>
     {% endfor %}
 </body>
