@@ -9,12 +9,32 @@
 <body>`
 {% block content %}
 <hr/><hr/>
-<p>All students:</p>
+<h3><strong>All students:</strong></h3>
 	<hr/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Last Name</th>
+      <th> Date of birth</th>
+      <th> Students ticket</th>
+    </tr>
+  </thead>
+
+  <tbody>
     {% for stud in studentsall %}
-    {{stud.dait_of_birth}}|{{stud.firstname}}|{{stud.lastname}}|{{stud.students_ticket}}
-    <hr/>
+    <tr>
+      <td>{{stud.id}}</td>
+      <td>{{stud.firstname}}</td>
+      <td>{{stud.lastname}}</td>
+      <td>{{stud.dait_of_birth}}</td>
+      <td>{{stud.students_ticket}}</td>
+    </tr>
     {% endfor %}
+  </tbody>
+</table>
+ 
 {% endblock %}
 </body>
 </body>

@@ -9,12 +9,24 @@
 <body>
 {% block content %}
 <hr/><hr/>
-	<p> Grops of students:	</p>
+	<h3><strong> Grops of students:	</strong></h3>
 	<hr/>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+		</tr>
+	</thead>
+	<tbody>
 	{% for group in groupsall %}
-		{{group.name}}
-		<hr/>
+		<tr>
+			<td>{{group.id}}</td>
+			<td>{{group.name}}</td>
+		</tr>
+	</tbody>
 	{% endfor %}
+</table>
 {% endblock %}
 </body>
 </html>
