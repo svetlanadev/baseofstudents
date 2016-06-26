@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='groupofstudents',
             name='chief',
-            field=models.CharField(default=1, max_length=128, unique=True),
+            field=models.CharField(default=1, max_length=128),
             preserve_default=False,
         ),
     ]

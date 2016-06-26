@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 <html>
+{% block head %}
 <head>
 	<title>Base_of_Students</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 </head>
+{% endblock %}
+
 {% block menu %}
 <body>
-	<h1>Base of students English course</h1>
+	<h1>Сервіс Обліку Студентів</h1>
 	<nav class="navbar navbar-light bg-faded">
 <!--   <a class="navbar-brand" href="#">Home</a> -->
   <ul class="nav navbar-nav">
     <li class="nav-item active">
-      <a class="nav-link" href="/">Students<span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="/">Студенти<span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/parametry/">Groups</a>
+      <a class="nav-link" href="/parametry/">Групи</a>
     </li>
    </ul>
 {% endblock %}
