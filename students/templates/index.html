@@ -6,7 +6,7 @@
 <hr/><hr/>
 <h3><strong>База студентів:</strong></h3>
 	<hr/>
-<p><a class="btn btn-primary btn-lg" href="#" role="button">Додати студента</a></p>
+<p><a class="btn btn-primary btn-lg" href="{% url 'students.views.students_add' %}" role="button">Додати студента</a></p>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -32,6 +32,7 @@
     {% endfor %}
   </tbody>
 </table>
+ 
  
 {% endblock %}
 

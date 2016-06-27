@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load staticfiles %} 
+
+
+{% block content %}
+<hr/><hr/>
+<h1>Додати студента:</h1>
+<form method="POST" class=students-form>{% csrf_token %}
+	{{ form.as_p }}
+ 	<button type="submit" class="save btn btn-default">Зберегти</button>
+</form>
+{% endblock %}
