@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from parametry.models import Groupofstudents
 from .forms import GroupofstudentsForm
@@ -12,6 +12,7 @@ def group_add(request):
 		form = GroupofstudentsForm(request.POST)
 		if form.is_valid():
 			form.save()
+		return redirect('parametry')
 	else:
 		form = GroupofstudentsForm()
 	return render(request, 'group_add.html', {'form' : form})

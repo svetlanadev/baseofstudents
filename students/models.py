@@ -12,7 +12,7 @@ class Studentsprofile(models.Model):
 	date_of_birth = models.DateField(verbose_name=u'Дата народження')
 	# photo = models.ImageField(upload_to='ProfileImage', blank=True)
 	students_ticket = models.IntegerField(default=0, verbose_name=u'№ Білету')
-	group = models.ForeignKey(Groupofstudents, verbose_name=u'Група')
+	group = models.ForeignKey(Groupofstudents, null=True, blank=True, verbose_name=u'Група')
 
 
 	def __unicode__(self):
