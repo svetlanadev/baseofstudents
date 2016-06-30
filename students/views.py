@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from students.models import Studentsprofile
+from parametry.models import Groupofstudents
 from .forms import StudentsForm
 
 def base(request):
@@ -20,4 +21,5 @@ def students_add(request):
 	else:
 		form = StudentsForm()
 	return render(request, 'students_add.html', {'form' : form})
-	
+
+

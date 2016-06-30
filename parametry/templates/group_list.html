@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %} 
+
+
+{% block content %}
+<br/><br/>
+<h2>Група {{ group.name }}</h2>
+	{% if group %}
+		{% if student %}
+			<ul>
+				{% for stud in student %}
+					<li>Студент {{ stud.lastname}}</li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<h2>No Students</h2>
+		{% endif %}
+	{% else %}
+		<h2>Вибачте, немає такоі групи</h2>
+	{% endif %}
+{% endblock %}

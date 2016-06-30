@@ -19,7 +19,7 @@
 	{% for group in groupsall %}
 		<tr>
 			<td>{{group.id}}</td>
-			<td>{{group.name}}</td>
+			<td><a href="{% url 'group_list' group_id=group.id %}">{{group.name}}</td>
 			<td>{{group.lead}}</td>
 		</tr>
 	</tbody>

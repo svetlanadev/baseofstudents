@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from parametry.models import Groupofstudents
+from students.models import Studentsprofile
 from .forms import GroupofstudentsForm
 
 def parametry(request):
@@ -16,3 +17,13 @@ def group_add(request):
 	else:
 		form = GroupofstudentsForm()
 	return render(request, 'group_add.html', {'form' : form})
+
+def group_list(request, group_id):
+	context_dict = {}
+	group = Groupofstudents.objects.get(id=group_id)
+	context_dict['group_id'] = group.id
+	student = Studentsprofile.objects.filter(group=group)
+	context_dict['student'] = student
+	context_dict['group'] = group
+	return render(request, 'group_list.html', context_dict)
+	
