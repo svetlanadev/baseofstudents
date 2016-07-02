@@ -6,9 +6,10 @@ from .forms import GroupofstudentsForm
 
 def parametry(request):
 	groups = Groupofstudents.objects.all()
-	return render(request, 'index1.html', {'groupsall' : groups})
+	return render(request, 'parametry/index.html', {'groupsall' : groups})
 
 def group_add(request):
+	# GET or POST?
 	if request.method == "POST":
 		form = GroupofstudentsForm(request.POST)
 		if form.is_valid():
@@ -16,7 +17,7 @@ def group_add(request):
 		return redirect('parametry')
 	else:
 		form = GroupofstudentsForm()
-	return render(request, 'group_add.html', {'form' : form})
+	return render(request, 'parametry/group_add.html', {'form' : form})
 
 def group_list(request, group_id):
 	context_dict = {}
@@ -25,5 +26,5 @@ def group_list(request, group_id):
 	student = Studentsprofile.objects.filter(group=group)
 	context_dict['student'] = student
 	context_dict['group'] = group
-	return render(request, 'group_list.html', context_dict)
+	return render(request, 'parametry/group_list.html', context_dict)
 	

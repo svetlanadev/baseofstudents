@@ -3,10 +3,10 @@
 
 
 {% block content %}
-<hr/><hr/>
+<br/><br/>
 	<h3><strong> Список груп:	</strong></h3>
 	<hr/>
-<p><a class="btn btn-primary btn-lg" href="{% url 'parametry.views.group_add' %}" role="button">Додати групу</a></p>
+<p><a class="btn btn-primary btn-lg" href="{% url 'parametry:group_add' %}" role="button">Додати групу</a></p>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -19,7 +19,7 @@
 	{% for group in groupsall %}
 		<tr>
 			<td>{{group.id}}</td>
-			<td><a href="{% url 'group_list' group_id=group.id %}">{{group.name}}</td>
+			<td><a href="{% url 'parametry:group_list' group.id %}">{{group.name}}</td>
 			<td>{{group.lead}}</td>
 		</tr>
 	</tbody>

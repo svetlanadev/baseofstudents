@@ -15,6 +15,6 @@ class Studentsprofile(models.Model):
 	group = models.ForeignKey(Groupofstudents, null=True, blank=True, verbose_name=u'Група')
 
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.firstname
 

@@ -12,5 +12,5 @@ class Groupofstudents(models.Model):
 	class Meta:
 		verbose_name_plural = 'Groupofstudents'
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.name

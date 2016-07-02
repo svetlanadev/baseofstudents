@@ -9,8 +9,11 @@ def base(request):
 
 
 def students(request):
-	students = Studentsprofile.objects.all()
-	return render(request, 'index.html', {'studentsall': students})
+	students = Studentsprofile.objects.order_by("students_ticket")
+	return render(request, 'students/index.html', {'studentsall': students})
+
+    # class Meta:
+    #     ordering = ["name"]	
 
 def students_add(request):
 	if request.method == 'POST':
@@ -20,6 +23,6 @@ def students_add(request):
 		return redirect('students')
 	else:
 		form = StudentsForm()
-	return render(request, 'students_add.html', {'form' : form})
+	return render(request, 'students/students_add.html', {'form' : form})
 
 

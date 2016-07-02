@@ -9,7 +9,7 @@
 		{% if student %}
 			<ul>
 				{% for stud in student %}
-					<li>Студент {{ stud.lastname}}</li>
+					<li>Студент {{ stud.lastname}}&nbsp;{{stud.firstname}}</li>
 				{% endfor %}
 			</ul>
 		{% else %}
