@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from students.models import Studentsprofile
 from parametry.models import Groupofstudents
@@ -15,14 +15,28 @@ def students(request):
     # class Meta:
     #     ordering = ["name"]	
 
+def students_test(request):
+	return render(request, 'students/test.html' )
+
 def students_add(request):
 	if request.method == 'POST':
 		form = StudentsForm(request.POST)
 		if form.is_valid():
 			form.save()
 		return redirect('students')
-	else:
+	else: 
 		form = StudentsForm()
 	return render(request, 'students/students_add.html', {'form' : form})
+	
+def students_edit(request, stud_id):
+	stud = get_object_or_404(Studentsprofile, id=stud_id)
+	if request.method == 'POST':
+		form = StudentsForm(request.POST, instance=stud)
+		if form.is_valid():
+			form.save()
+		return redirect('students.views.students')
+	else: 
+		form = StudentsForm(instance=stud)
+	return render(request, 'students/students_add.html', {'form' : form})
 
-
+ 

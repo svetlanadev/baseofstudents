@@ -4,6 +4,7 @@ from parametry.models import Groupofstudents
 from students.models import Studentsprofile
 from .forms import GroupofstudentsForm
 
+
 def parametry(request):
 	groups = Groupofstudents.objects.all()
 	return render(request, 'parametry/index.html', {'groupsall' : groups})
@@ -14,7 +15,7 @@ def group_add(request):
 		form = GroupofstudentsForm(request.POST)
 		if form.is_valid():
 			form.save()
-		return redirect('parametry')
+		return redirect('students')
 	else:
 		form = GroupofstudentsForm()
 	return render(request, 'parametry/group_add.html', {'form' : form})

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
 from django.db import models
 
 
@@ -13,4 +12,4 @@ class Groupofstudents(models.Model):
 		verbose_name_plural = 'Groupofstudents'
 
 	def __str__(self):
-		return self.name
+		return self.name  
