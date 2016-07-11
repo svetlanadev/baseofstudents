@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from students.models import Studentsprofile
 from parametry.models import Groupofstudents
 from .forms import StudentsForm
+from django.conf import settings
 
 def base(request):
 	return render(request, 'base.html')
@@ -10,8 +11,7 @@ def base(request):
 
 def students(request):
 	students = Studentsprofile.objects.order_by("students_ticket")
-	return render(request, 'students/index.html', {'studentsall': students})
-
+	return render(request, 'students/index.html', {'studentsall': students, 'media_base' : settings.MEDIA_URL })
     # class Meta:
     #     ordering = ["name"]	
 

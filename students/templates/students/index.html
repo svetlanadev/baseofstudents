@@ -25,7 +25,7 @@
     {% for stud in studentsall %}
     <tr>
       <td>{{stud.id}}</td>
-      <td>{{stud.photo}}<img src="{{ Studentsprofile.photo.url }}" /></td>
+      <td><img src="{{media_base}}{{ stud.photo}}" alt='profile_photo' height="42" width="42" /></td>
       <td>{{stud.firstname}}</td>
       <td>{{stud.lastname}}</td>
       <td>{{stud.date_of_birth}}</td>
@@ -36,7 +36,7 @@
     {% endfor %}
   </tbody>
 </table>
-<img src="{{ MEDIA_URL }}profile_photo/W-P1gnjxN2E.jpg" />
+
 
     
 
